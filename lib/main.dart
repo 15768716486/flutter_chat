@@ -29,7 +29,7 @@ void main()=>runApp(
 );
 
 final ThemeData mDefaultTheme =new ThemeData(
-  primaryColor: Colors.green,
-  scaffoldBackgroundColor: Color(0xFFFF0000),
-  cardColor: Colors.green
+  primaryColor: Colors.white,
+  scaffoldBackgroundColor: Color(0xFFebebeb),
+  cardColor: Colors.grey
 );

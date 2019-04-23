@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './chat/message_page.dart';
 import './contacts/contacts.dart';
+import './find/find.dart';
 import './personal/personal.dart';
 
 //应用页面使用有状态Widget
@@ -20,6 +21,9 @@ class AppState extends State<App> {
   //好友页面
   Contacts contacts;
 
+  //发现页面
+  Find find;
+
   //我的页面
   Personal me;
 
@@ -37,6 +41,11 @@ class AppState extends State<App> {
         }
         return contacts;
       case 2:
+        if (find == null) {
+          find = new Find();
+        }
+        return find;
+      case 3:
         if (me == null) {
           me = new Personal();
         }
@@ -82,7 +91,7 @@ class AppState extends State<App> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('即时通讯'),
+        title: Text('微信'),
         actions: <Widget>[
           GestureDetector(
             onTap: () {
@@ -106,16 +115,17 @@ class AppState extends State<App> {
                   position: RelativeRect.fromLTRB(500.0, 76.0, 10.0, 0.0),
                   //展示所有菜单项
                   items: <PopupMenuEntry>[
-                    _popupMenuItem('发起会话',
+                    _popupMenuItem('发起群聊',
                         imagePath: 'images/icon_menu_group.png'),
                     _popupMenuItem('添加好友',
                         imagePath: 'images/icon_menu_addfriend.png'),
-                    _popupMenuItem('联系客服', icon: Icons.person),
+                    _popupMenuItem('扫一扫', 
+                        imagePath: 'images/icon_menu_scan.png'),
                   ],
                 );
               },
               //菜单按钮
-              child: Icon(Icons.add),
+              child: Icon(Icons.add_circle_outline),
             ),
           ),
         ],
@@ -137,7 +147,7 @@ class AppState extends State<App> {
           //导航按钮项传入文本及图标
           new BottomNavigationBarItem(
               title: new Text(
-                '聊天',
+                '微信',
                 style: TextStyle(
                     color: _currentIndex == 0
                         ? Color(0xFF46c01b)
@@ -157,7 +167,7 @@ class AppState extends State<App> {
                     )),
           new BottomNavigationBarItem(
               title: new Text(
-                '好友',
+                '通讯录',
                 style: TextStyle(
                     color: _currentIndex == 1
                         ? Color(0xFF46c01b)
@@ -176,13 +186,32 @@ class AppState extends State<App> {
                     )),
           new BottomNavigationBarItem(
               title: new Text(
-                '我的',
+                '发现',
                 style: TextStyle(
                     color: _currentIndex == 2
                         ? Color(0xFF46c01b)
                         : Color(0xff999999)),
               ),
               icon: _currentIndex == 2
+                  ? Image.asset(
+                      'images/icon_find_pressed.png',
+                      width: 32.0,
+                      height: 28.0,
+                    )
+                  : Image.asset(
+                      'images/icon_find_normal.png',
+                      width: 32.0,
+                      height: 28.0,
+                    )),
+          new BottomNavigationBarItem(
+              title: new Text(
+                '我',
+                style: TextStyle(
+                    color: _currentIndex == 3
+                        ? Color(0xFF46c01b)
+                        : Color(0xff999999)),
+              ),
+              icon: _currentIndex == 3
                   ? Image.asset(
                       'images/profile_pressed.png',
                       width: 32.0,

@@ -34,10 +34,15 @@ flutter:
   - images/profile_pressed.png
   - images/message_normal.png
   - images/message_pressed.png
+  - images/icon_find_normal.png
+  - images/icon_find_pressed.png
 
   #菜单按钮
   - images/icon_menu_addfriend.png
   - images/icon_menu_group.png
+  - images/icon_menu_scan.png
+  #启动页
+  - images/launch.jpg
 
   #好友模块图标
   - images/icon_addfriend.png

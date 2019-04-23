@@ -22,7 +22,7 @@ class _LoadingState extends State<LoadingPage>{
     return Center(
       child: Stack(
         children: <Widget>[
-          Image.asset('images/loading.jpeg',fit:BoxFit.cover,),
+          Image.asset('images/launch.jpg',fit:BoxFit.cover,),
         ],
       ),
     );

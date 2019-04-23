@@ -70,7 +70,7 @@ class Personal extends StatelessWidget {
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: ImItem(
-              title: '好友动态',
+              title: '支付',
               imagePath: 'images/icon_me_friends.png',
             ),
           ),
@@ -81,7 +81,7 @@ class Personal extends StatelessWidget {
               children: <Widget>[
                 ImItem(
                   imagePath: 'images/icon_me_message.png',
-                  title: '消息管理',
+                  title: '收藏',
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, right: 15.0),
@@ -92,7 +92,7 @@ class Personal extends StatelessWidget {
                 ),
                 ImItem(
                   imagePath: 'images/icon_me_photo.png',
-                  title: '我的相册',
+                  title: '相册',
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, right: 15.0),
@@ -103,7 +103,7 @@ class Personal extends StatelessWidget {
                 ),
                 ImItem(
                   imagePath: 'images/icon_me_file.png',
-                  title: '我的文件',
+                  title: '卡包',
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, right: 15.0),
@@ -114,7 +114,7 @@ class Personal extends StatelessWidget {
                 ),
                 ImItem(
                   imagePath: 'images/icon_me_service.png',
-                  title: '联系客服',
+                  title: '表情',
                 ),
               ],
             ),
@@ -123,7 +123,7 @@ class Personal extends StatelessWidget {
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: ImItem(
-              title: '清理缓存',
+              title: '设置',
               imagePath: 'images/icon_me_clear.png',
             ),
           ),
