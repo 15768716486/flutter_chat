@@ -52,6 +52,14 @@ class ImItem extends StatelessWidget{
               title,
               style: TextStyle(fontSize: 16.0,color: Color(0xFF353535)),
             ),
+            Expanded(
+              child: Text(''),
+            ),
+            Container(
+              child: (
+                Image.asset('images/arrow_right.png')
+              ),
+            )
           ],
         ),
       ),

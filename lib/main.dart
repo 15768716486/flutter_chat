@@ -29,13 +29,7 @@ void main()=>runApp(
 );
 
 final ThemeData mDefaultTheme =new ThemeData(
-<<<<<<< HEAD
-  primaryColor: Colors.white,
-  scaffoldBackgroundColor: Color(0xFFebebeb),
-  cardColor: Colors.grey
-=======
-  primaryColor: Colors.green,
-  scaffoldBackgroundColor: Color(0xFFebebeb),
-  cardColor: Colors.green
->>>>>>> f114d1a74a9564d0ce149bc50ebb03bffa795516
+  primaryColor: Color(0xFFF5F5F5),             //前景色   
+  scaffoldBackgroundColor: Color(0xFFEDEDED),  //背景颜色（间隔）
+  cardColor: Color(0xFF4C4C4C)                 //popmenu颜色           
 );

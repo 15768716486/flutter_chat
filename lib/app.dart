@@ -91,6 +91,7 @@ class AppState extends State<App> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         title: Text('微信'),
         actions: <Widget>[
           GestureDetector(
@@ -121,6 +122,10 @@ class AppState extends State<App> {
                         imagePath: 'images/icon_menu_addfriend.png'),
                     _popupMenuItem('扫一扫', 
                         imagePath: 'images/icon_menu_scan.png'),
+                     _popupMenuItem('收付款', 
+                        imagePath: 'images/icon_menu_scan.png'),
+                     _popupMenuItem('帮助与反馈', 
+                        imagePath: 'images/icon_menu_help.png'),
                   ],
                 );
               },
@@ -151,7 +156,7 @@ class AppState extends State<App> {
                 style: TextStyle(
                     color: _currentIndex == 0
                         ? Color(0xFF46c01b)
-                        : Color(0xff999999)),
+                        : Color(0xFF000000)),
               ),
               //判断当前索引作图片切换显示
               icon: _currentIndex == 0
@@ -171,7 +176,7 @@ class AppState extends State<App> {
                 style: TextStyle(
                     color: _currentIndex == 1
                         ? Color(0xFF46c01b)
-                        : Color(0xff999999)),
+                        : Color(0xFF000000)),
               ),
               icon: _currentIndex == 1
                   ? Image.asset(
@@ -190,7 +195,7 @@ class AppState extends State<App> {
                 style: TextStyle(
                     color: _currentIndex == 2
                         ? Color(0xFF46c01b)
-                        : Color(0xff999999)),
+                        : Color(0xFF000000)),
               ),
               icon: _currentIndex == 2
                   ? Image.asset(
@@ -209,7 +214,7 @@ class AppState extends State<App> {
                 style: TextStyle(
                     color: _currentIndex == 3
                         ? Color(0xFF46c01b)
-                        : Color(0xff999999)),
+                        : Color(0xFF000000)),
               ),
               icon: _currentIndex == 3
                   ? Image.asset(

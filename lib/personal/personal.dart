@@ -14,7 +14,7 @@ class Personal extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
-            height: 80.0,
+            height: 100.0,
             child: TouchCallBack(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,8 +24,8 @@ class Personal extends StatelessWidget {
                     margin: const EdgeInsets.only(left: 12.0, right: 15.0),
                     child: Image.asset(
                       'images/yixiu.jpeg',
-                      width: 70.0,
-                      height: 70.0,
+                      width: 80.0,
+                      height: 60.0,
                     ),
                   ),
                   //用户名及帐号显示
@@ -35,14 +35,14 @@ class Personal extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          '一休',
+                          '千万别急',
                           style: TextStyle(
                             fontSize: 18.0,
                             color: Color(0xFF353535),
                           ),
                         ),
                         Text(
-                          '帐号 yixiu',
+                          '帐号 bieji',
                           style: TextStyle(
                             fontSize: 14.0,
                             color: Color(0xFFa9a9a9),
@@ -67,15 +67,16 @@ class Personal extends StatelessWidget {
           ),
           //列表项 使用ImItem渲染
           Container(
-            margin: const EdgeInsets.only(top: 20.0),
+            margin: const EdgeInsets.only(top: 8.0),
             color: Colors.white,
             child: ImItem(
               title: '支付',
               imagePath: 'images/icon_me_friends.png',
+              icon: Icon(Icons.add_circle),
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 20.0),
+            margin: const EdgeInsets.only(top: 8.0),
             color: Colors.white,
             child: Column(
               children: <Widget>[
@@ -108,7 +109,7 @@ class Personal extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: Divider(
-                    height: 0.5,
+                    height: 0.1,
                     color: Color(0xFFd9d9d9),
                   ),
                 ),
@@ -120,7 +121,7 @@ class Personal extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 20.0),
+            margin: const EdgeInsets.only(top: 8.0),
             color: Colors.white,
             child: ImItem(
               title: '设置',
