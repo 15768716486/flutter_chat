@@ -16,6 +16,10 @@ class ContactState extends State<Contacts>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        title: Text('通讯录'),
+      ),
       //主体实现
       body: ContactSiderList(
         //好友列表数据

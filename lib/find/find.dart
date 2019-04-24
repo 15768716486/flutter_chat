@@ -8,6 +8,10 @@ class Find extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       //列表
+      appBar: AppBar(
+        elevation: 0.0,
+        title: Text('发现'),
+      ),
       body: ListView(
         children: <Widget>[
           //列表项 使用ImItem渲染

@@ -42,6 +42,9 @@ flutter:
   - images/icon_menu_group.png
   - images/icon_menu_scan.png
   - images/icon_menu_help.png
+  - images/icon_menu_tag.png
+  - images/icon_menu_add.png
+  - images/icon_menu_public.png
   #启动页
   - images/launch.jpg
 

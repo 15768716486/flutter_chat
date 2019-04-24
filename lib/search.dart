@@ -25,7 +25,7 @@ class SearchState extends State<Search> {
       child: Text(
         text,
         //添加文本样式
-        style: TextStyle(fontSize: 14.0, color: Color(0xff1aad19)),
+        style: TextStyle(fontSize: 14.0, color: Color(0xFF516084)),
       ),
     );
   }
@@ -35,6 +35,7 @@ class SearchState extends State<Search> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        color: Color(0xFFF5F5F5),
         //顶部留一定距离
         margin: const EdgeInsets.only(top: 25.0),
         //整体垂直布局
@@ -105,7 +106,7 @@ class SearchState extends State<Search> {
             Container(
               margin: const EdgeInsets.only(top: 50.0),
               child: Text(
-                '常用搜索',
+                '搜索指定内容',
                 style: TextStyle(fontSize: 16.0, color: Color(0xffb5b5b5)),
               ),
             ),
@@ -116,9 +117,9 @@ class SearchState extends State<Search> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 //第一行搜索项
                 children: <Widget>[
-                  _getText('朋友'),
-                  _getText('聊天'),
-                  _getText('群组'),
+                  _getText('朋友圈'),
+                  _getText('文章'),
+                  _getText('公众号'),
                 ],
               ),
             ),
@@ -128,9 +129,9 @@ class SearchState extends State<Search> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   //第二行搜索项
-                  _getText('Flutter'),
-                  _getText('Dart'),
-                  _getText('C++'),
+                  _getText('小程序'),
+                  _getText('音乐'),
+                  _getText('表情'),
                 ],
               ),
             ),
