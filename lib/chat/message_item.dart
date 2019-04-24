@@ -64,7 +64,7 @@ class MessageItem extends StatelessWidget{
               margin: const EdgeInsets.only(right: 12.0,top: 12.0),
               child: Text(
                 //格式化时间
-                formatDate(message.time, [HH,':',nn,':','ss']).toString(),
+                formatDate(message.time, [HH,':',nn]).toString(),
                 style: TextStyle(fontSize: 14.0,color: Color(0xFFa9a9a9)),
               ),
             ),

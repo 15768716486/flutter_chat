@@ -7,12 +7,21 @@ class Personal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        title: Text(''),
+        backgroundColor: Colors.white,//AppBar的背景颜色
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.photo_camera,color: Colors.black,),
+          )
+        ],
+      ),
       //列表
       body: ListView(
         children: <Widget>[
           //头像部分实现
           Container(
-            margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             height: 100.0,
             child: TouchCallBack(
@@ -53,13 +62,17 @@ class Personal extends StatelessWidget {
                   ),
                   //二维码图片显示
                   Container(
-                    margin: const EdgeInsets.only(left: 12.0, right: 15.0),
-                    child: Image.asset(
-                      'images/code.png',
-                      width: 24.0,
-                      height: 24.0,
-                    ),
-                  ),
+                      margin: const EdgeInsets.only(left: 12.0, right: 15.0),
+                      child: Row(
+                        children: <Widget>[
+                          Image.asset(
+                            'images/code.png',
+                            width: 18.0,
+                            height: 18.0,
+                          ),
+                          Image.asset('images/arrow_right.png')
+                        ],
+                      )),
                 ],
               ),
               onPressed: () {},
