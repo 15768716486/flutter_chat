@@ -13,6 +13,8 @@ dependencies:
   flutter_webview_plugin: ^0.3.4
   date_format: ^1.0.6
   cupertino_icons: ^0.1.2
+  # 透明图片占位符
+  transparent_image: ^1.0.0
   cached_network_image: ^0.7.0
 
 dev_dependencies:

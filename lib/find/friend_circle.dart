@@ -1,6 +1,8 @@
+import '../widgets/da/grid_images.dart';
+import '../widgets/da/network_image_ex.dart';
 import 'package:flutter/material.dart';
 import '../widgets.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import '../widgets/da/avatar.dart';
 
 class FriendCirclePage extends StatefulWidget {
   @override
@@ -10,10 +12,10 @@ class FriendCirclePage extends StatefulWidget {
 class FriendCircleItem {
   String username;
   String content;
-  List<Image> images;
+  List<String> images;
   String timeStr;
   String from;
-  Image avatar;
+  Widget avatar;
 
   FriendCircleItem(
       {this.username,
@@ -36,37 +38,51 @@ class _FriendCirclePageState extends State<FriendCirclePage> {
     _circleList.clear();
     _circleList.add(FriendCircleItem(
       username: '用户',
-      content: '内容',
+      content: '单张图片',
       images: [
-        Image.network(
-          'http://lorempixel.com/80/80/',
-          fit: BoxFit.cover,
-        ),
+        'http://lorempixel.com/160/200/',
       ],
       timeStr: '1分钟前',
-      from: 'IT之家客户端',
-      avatar: Image.network(
-        'http://lorempixel.com/35/35/',
-        fit: BoxFit.fitHeight,
-        height: 35,
+      from: '',
+      avatar: CppChatAvatar(
+        imageUrl: 'http://lorempixel.com/35/35/',
       ),
     ));
 
     _circleList.add(FriendCircleItem(
       username: '用户',
-      content: '内容',
+      content: '4格图片',
       images: [
-        Image.network('http://lorempixel.com/80/80/', fit: BoxFit.cover),
-        Image.network('http://lorempixel.com/80/80/', fit: BoxFit.cover),
-        Image.network('http://lorempixel.com/80/80/', fit: BoxFit.cover),
-        Image.network('http://lorempixel.com/80/80/', fit: BoxFit.cover),
+        'http://lorempixel.com/80/80/?ida=1',
+        'http://lorempixel.com/80/80/?ida=2',
+        'http://lorempixel.com/80/80/?ida=3',
+        'http://lorempixel.com/80/80/?ida=4',
       ],
       timeStr: '1分钟前',
-      from: 'IT之家客户端',
-      avatar: Image.network(
-        'http://lorempixel.com/35/35/',
-        fit: BoxFit.fitHeight,
-        height: 35,
+      from: 'CppChat客户端',
+      avatar: CppChatAvatar(
+        imageUrl: 'http://lorempixel.com/35/35/',
+      ),
+    ));
+
+    _circleList.add(FriendCircleItem(
+      username: '用户',
+      content: '9格图片',
+      images: [
+        'http://lorempixel.com/80/80/?id=1',
+        'http://lorempixel.com/80/80/?id=2',
+        'http://lorempixel.com/80/80/?id=3',
+        'http://lorempixel.com/80/80/?id=4',
+        'http://lorempixel.com/80/80/?id=5',
+        'http://lorempixel.com/80/80/?id=6',
+        'http://lorempixel.com/80/80/?id=7',
+        'http://lorempixel.com/80/80/?id=8',
+        'http://lorempixel.com/80/80/?id=9',
+      ],
+      timeStr: '1分钟前',
+      from: 'CppChat客户端',
+      avatar: CppChatAvatar(
+        imageUrl: 'http://lorempixel.com/35/35/',
       ),
     ));
 
@@ -75,23 +91,14 @@ class _FriendCirclePageState extends State<FriendCirclePage> {
         username: '用户$i',
         content: '内容$i',
         images: [
-          Image.network(
-            'http://lorempixel.com/80/80/?id=$i',
-            fit: BoxFit.fitHeight,
-            height: 80,
-          ),
-          Image.network(
-            'http://lorempixel.com/80/80/?id=${i}2',
-            fit: BoxFit.fitHeight,
-            height: 80,
-          ),
+          'http://lorempixel.com/80/80/?id=$i',
+          'http://lorempixel.com/80/80/?id=${i}2',
         ],
         timeStr: '$i分钟前',
-        from: 'IT之家客户端',
-        avatar: Image.network(
-          'http://lorempixel.com/35/35/?id=$i',
-          fit: BoxFit.fitHeight,
+        from: 'CppChat客户端',
+        avatar: CppChatAvatar(
           height: 35,
+          imageUrl: 'http://lorempixel.com/35/35/?id=$i',
         ),
       ));
     }
@@ -145,8 +152,10 @@ class _FriendCirclePageState extends State<FriendCirclePage> {
     return FlexibleSpaceBar(
       background: Stack(
         children: <Widget>[
-          Image.network(
-            'http://lorempixel.com/300/300/',
+          /// 封面图
+          NetworkImageEx(
+            assetName: 'images/grey.jpg',
+            imageUrl: 'http://lorempixel.com/300/300/',
             fit: BoxFit.fill,
             width: double.infinity,
             height: 260,
@@ -159,11 +168,12 @@ class _FriendCirclePageState extends State<FriendCirclePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
+                  /// 头像旁边的用户名
                   Container(
                     padding: EdgeInsets.only(top: 10),
                     child: Text('用户名',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           color: Colors.white,
                           decoration: TextDecoration.none,
                           shadows: [
@@ -176,18 +186,11 @@ class _FriendCirclePageState extends State<FriendCirclePage> {
                   ),
                   SimpleDivider(height: 0, width: 10),
 
-                  /// 大头像要加上一点点圆边
-                  // ClipRRect(
-                  //   borderRadius: BorderRadius.circular(6.0),
-                  //   child: Image.network('http://lorempixel.com/80/80/'),
-                  // ),
-                  /// 使用透明图片作为占位符
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(6),
-                    child: CachedNetworkImage(
-                      placeholder: (ctx, str) => CircularProgressIndicator(),
-                      imageUrl: 'http://lorempixel.com/1000/1000/',
-                    ),
+                  /// 大头像
+                  CppChatAvatar(
+                    imageUrl: 'http://lorempixel.com/1500/1500/',
+                    width: 80,
+                    height: 80,
                   ),
                 ],
               ),
@@ -198,15 +201,17 @@ class _FriendCirclePageState extends State<FriendCirclePage> {
     );
   }
 
+  /// 构建每一条朋友圈
   Widget _buildFriendCircleItem(FriendCircleItem item) {
     var itemChildren = <Widget>[
       /// 用户名
       Text(
         item.username,
-        style: TextStyle(fontSize: 15, color: Colors.blue[900]),
+        style: TextStyle(
+            fontSize: 15, color: Colors.blue[900], fontWeight: FontWeight.bold),
       ),
 
-      /// 朋友圈内容
+      /// 朋友圈文字内容
       Container(
         padding: EdgeInsets.only(bottom: 3),
         child: Text(
@@ -214,161 +219,32 @@ class _FriendCirclePageState extends State<FriendCirclePage> {
           style: TextStyle(fontSize: 14),
         ),
       ),
+
+      GridImages(imagesUrl: item.images),
     ];
 
-    /// 暴力的强行图片布局
-    switch (item.images.length) {
-      case 1:
-        itemChildren.add(item.images[0]);
-        break;
-      case 2:
-        itemChildren.add(Row(children: <Widget>[
-          item.images[0],
-          SimpleDivider(height: 0, width: 3),
-          item.images[1],
-        ]));
-        break;
-      case 3:
-        itemChildren
-          ..add(Row(children: <Widget>[
-            item.images[0],
-            SimpleDivider(height: 0, width: 3),
-            item.images[1],
-          ]))
-          ..add(SimpleDivider(height: 3, width: 0))
-          ..add(Row(children: <Widget>[item.images[2]]));
-        break;
-      case 4:
-        itemChildren
-          ..add(Row(children: <Widget>[
-            item.images[0],
-            SimpleDivider(height: 0, width: 3),
-            item.images[1]
-          ]))
-          ..add(SimpleDivider(height: 3, width: 0))
-          ..add(Row(children: <Widget>[
-            item.images[2],
-            SimpleDivider(height: 0, width: 3),
-            item.images[3]
-          ]));
-        break;
-      case 5:
-        itemChildren
-          ..add(Row(children: <Widget>[
-            item.images[0],
-            SimpleDivider(height: 0, width: 3),
-            item.images[1],
-            SimpleDivider(height: 0, width: 3),
-            item.images[2]
-          ]))
-          ..add(SimpleDivider(height: 3, width: 0))
-          ..add(Row(children: <Widget>[
-            item.images[3],
-            SimpleDivider(height: 0, width: 3),
-            item.images[4]
-          ]));
-        break;
-      case 6:
-        itemChildren
-          ..add(Row(children: <Widget>[
-            item.images[0],
-            SimpleDivider(height: 0, width: 3),
-            item.images[1],
-            SimpleDivider(height: 0, width: 3),
-            item.images[2]
-          ]))
-          ..add(SimpleDivider(height: 3, width: 0))
-          ..add(Row(children: <Widget>[
-            item.images[3],
-            SimpleDivider(height: 0, width: 3),
-            item.images[4],
-            SimpleDivider(height: 0, width: 3),
-            item.images[5]
-          ]));
-        break;
-      case 7:
-        itemChildren
-          ..add(Row(children: <Widget>[
-            item.images[0],
-            SimpleDivider(height: 0, width: 3),
-            item.images[1],
-            SimpleDivider(height: 0, width: 3),
-            item.images[2]
-          ]))
-          ..add(SimpleDivider(height: 3, width: 0))
-          ..add(Row(children: <Widget>[
-            item.images[3],
-            SimpleDivider(height: 0, width: 3),
-            item.images[4],
-            SimpleDivider(height: 0, width: 3),
-            item.images[5]
-          ]))
-          ..add(SimpleDivider(height: 3, width: 0))
-          ..add(Row(
-            children: <Widget>[item.images[6]],
-          ));
-        break;
-      case 8:
-        itemChildren
-          ..add(Row(children: <Widget>[
-            item.images[0],
-            SimpleDivider(height: 0, width: 3),
-            item.images[1],
-            SimpleDivider(height: 0, width: 3),
-            item.images[2]
-          ]))
-          ..add(SimpleDivider(height: 3, width: 0))
-          ..add(Row(children: <Widget>[
-            item.images[3],
-            SimpleDivider(height: 0, width: 3),
-            item.images[4],
-            SimpleDivider(height: 0, width: 3),
-            item.images[5]
-          ]))
-          ..add(SimpleDivider(height: 3, width: 0))
-          ..add(Row(
-            children: <Widget>[item.images[6], item.images[7]],
-          ));
-        break;
-      case 9:
-        itemChildren
-          ..add(Row(children: <Widget>[
-            item.images[0],
-            SimpleDivider(height: 0, width: 3),
-            item.images[1],
-            SimpleDivider(height: 0, width: 3),
-            item.images[2]
-          ]))
-          ..add(SimpleDivider(height: 3, width: 0))
-          ..add(Row(children: <Widget>[
-            item.images[3],
-            SimpleDivider(height: 0, width: 3),
-            item.images[4],
-            SimpleDivider(height: 0, width: 3),
-            item.images[5]
-          ]))
-          ..add(SimpleDivider(height: 3, width: 0))
-          ..add(Row(
-            children: <Widget>[
-              item.images[6],
-              SimpleDivider(height: 0, width: 3),
-              item.images[7],
-              SimpleDivider(height: 0, width: 3),
-              item.images[8]
-            ],
-          ));
-        break;
-    }
-
     /// 发布时间、来源、操作
-    itemChildren.add(Row(
-      children: <Widget>[
-        Text(item.timeStr, style: TextStyle(fontSize: 12)),
-        SimpleDivider(height: 0, width: 12),
-        // Expanded(child: Text(item.from, style: TextStyle(fontSize: 12))),
-        Text(item.from, style: TextStyle(fontSize: 12)),
-        FlatButton(child: Icon(Icons.more_horiz), onPressed: () {}),
-      ],
+    itemChildren.add(Container(
+      padding: EdgeInsets.only(right: 8, top: 10),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Text(item.timeStr,
+              style: TextStyle(fontSize: 12, color: Colors.grey[600])),
+          SimpleDivider(height: 0, width: 8),
+          Expanded(
+              child: Text(item.from,
+                  style: TextStyle(fontSize: 12, color: Colors.grey[600]))),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: Container(
+              color: Colors.grey[100],
+              child: Icon(Icons.more_horiz),
+            ),
+          ),
+        ],
+      ),
     ));
 
     var row = Row(
@@ -385,18 +261,22 @@ class _FriendCirclePageState extends State<FriendCirclePage> {
         ),
 
         /// 朋友圈主体
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: itemChildren,
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: itemChildren,
+          ),
         ),
       ],
     );
 
-    var column = Column(children: <Widget>[
-      row,
-      Divider(height: 10),
-    ]);
+    var column = Column(
+      children: <Widget>[
+        row,
+        Divider(height: 18),
+      ],
+    );
 
     return column;
   }
