@@ -36,7 +36,7 @@ class Find extends StatelessWidget {
               // )
               child: ImItem(
                       title: '朋友圈',
-                      imagePath: 'images/icon_me_friends.png',
+                      imagePath: 'images/friendCircle.png',
                     ),
           ),
           Container(
@@ -45,7 +45,7 @@ class Find extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 ImItem(
-                  imagePath: 'images/icon_me_message.png',
+                  imagePath: 'images/icon_scan.png',
                   title: '扫一扫',
                 ),
                 Padding(
@@ -56,7 +56,7 @@ class Find extends StatelessWidget {
                   ),
                 ),
                 ImItem(
-                  imagePath: 'images/icon_me_photo.png',
+                  imagePath: 'images/icon_wave.png',
                   title: '摇一摇',
                 ),
                 Padding(
@@ -75,7 +75,7 @@ class Find extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 ImItem(
-                  imagePath: 'images/icon_me_message.png',
+                  imagePath: 'images/icon_look.png',
                   title: '看一看',
                 ),
                 Padding(
@@ -86,7 +86,7 @@ class Find extends StatelessWidget {
                   ),
                 ),
                 ImItem(
-                  imagePath: 'images/icon_me_photo.png',
+                  imagePath: 'images/icon_search.png',
                   title: '搜一搜',
                 ),
                 Padding(
@@ -105,7 +105,7 @@ class Find extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 ImItem(
-                  imagePath: 'images/icon_me_message.png',
+                  imagePath: 'images/icon_near.png',
                   title: '附近的人',
                 ),
                 Padding(
@@ -116,7 +116,7 @@ class Find extends StatelessWidget {
                   ),
                 ),
                 ImItem(
-                  imagePath: 'images/icon_me_photo.png',
+                  imagePath: 'images/icon_float.png',
                   title: '漂流瓶',
                 ),
                 Padding(
@@ -135,7 +135,7 @@ class Find extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 ImItem(
-                  imagePath: 'images/icon_me_message.png',
+                  imagePath: 'images/icon_shopping.png',
                   title: '购物',
                 ),
                 Padding(
@@ -146,7 +146,7 @@ class Find extends StatelessWidget {
                   ),
                 ),
                 ImItem(
-                  imagePath: 'images/icon_me_photo.png',
+                  imagePath: 'images/icon_game.png',
                   title: '游戏',
                 ),
                 Padding(
@@ -165,7 +165,7 @@ class Find extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 ImItem(
-                  imagePath: 'images/icon_me_message.png',
+                  imagePath: 'images/icon_miniapp.png',
                   title: '小程序',
                 ),
                 Padding(

@@ -58,15 +58,35 @@ flutter:
   - images/icon_groupchat.png
   - images/icon_public.png
 
-  #我的模块图标
-  - images/icon_me_friends.png
-  - images/icon_me_photo.png
-  - images/icon_me_file.png
-  - images/icon_me_service.png
-  - images/icon_me_message.png
-  - images/icon_me_clear.png
-  - images/code.png
+  
+  #我的模块（微信图标）
   - images/yixiu.jpeg
+  - images/icon_pay.png
+  - images/icon_collect.png
+  - images/icon_ablumn.png
+  - images/icon_package.png
+  - images/icon_emoji.png
+  - images/icon_setting.png
+
+  #发现模块
+  - images/friendCircle.png
+  - images/icon_scan.png
+  - images/icon_wave.png
+  - images/icon_look.png
+  - images/icon_search.png
+  - images/icon_near.png
+  - images/icon_float.png
+  - images/icon_shopping.png
+  - images/icon_game.png
+  - images/icon_miniapp.png
+
+
+
+
+
+
+
+
 
 
 

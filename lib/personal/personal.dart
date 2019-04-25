@@ -84,7 +84,7 @@ class Personal extends StatelessWidget {
             color: Colors.white,
             child: ImItem(
               title: '支付',
-              imagePath: 'images/icon_me_friends.png',
+              imagePath: 'images/icon_pay.png',
               icon: Icon(Icons.add_circle),
             ),
           ),
@@ -94,7 +94,7 @@ class Personal extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 ImItem(
-                  imagePath: 'images/icon_me_message.png',
+                  imagePath: 'images/icon_collect.png',
                   title: '收藏',
                 ),
                 Padding(
@@ -105,7 +105,7 @@ class Personal extends StatelessWidget {
                   ),
                 ),
                 ImItem(
-                  imagePath: 'images/icon_me_photo.png',
+                  imagePath: 'images/icon_ablumn.png',
                   title: '相册',
                 ),
                 Padding(
@@ -116,7 +116,7 @@ class Personal extends StatelessWidget {
                   ),
                 ),
                 ImItem(
-                  imagePath: 'images/icon_me_file.png',
+                  imagePath: 'images/icon_package.png',
                   title: '卡包',
                 ),
                 Padding(
@@ -127,7 +127,7 @@ class Personal extends StatelessWidget {
                   ),
                 ),
                 ImItem(
-                  imagePath: 'images/icon_me_service.png',
+                  imagePath: 'images/icon_emoji.png',
                   title: '表情',
                 ),
               ],
@@ -138,7 +138,7 @@ class Personal extends StatelessWidget {
             color: Colors.white,
             child: ImItem(
               title: '设置',
-              imagePath: 'images/icon_me_clear.png',
+              imagePath: 'images/icon_setting.png',
             ),
           ),
         ],
