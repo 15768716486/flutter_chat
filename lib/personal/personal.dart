@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../common/touch_callback.dart';
 import '../common/im_item.dart';
+import 'account.dart';
 
 //我的页面
 class Personal extends StatelessWidget {
@@ -75,7 +76,10 @@ class Personal extends StatelessWidget {
                       )),
                 ],
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,new MaterialPageRoute(builder: (context) => new Account()),
+            );
+              },
             ),
           ),
           //列表项 使用ImItem渲染

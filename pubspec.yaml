@@ -67,6 +67,8 @@ flutter:
   - images/icon_package.png
   - images/icon_emoji.png
   - images/icon_setting.png
+  - images/QRcode.png
+
 
   #发现模块
   - images/friendCircle.png
