@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './touch_callback.dart';
+import '../find/friend_circle.dart';
+//import 'test.dart';
 
 //通用列表项
 class ImItem extends StatelessWidget{
@@ -18,9 +20,13 @@ class ImItem extends StatelessWidget{
       onPressed: (){
         //判断点击的项
         switch(title){
-          case '好友动态':
-            //路由到好友动态页面
-            Navigator.pushNamed(context, '/friends');
+          case '朋友圈':
+            //路由到朋友圈页面
+            print('点击跳转朋友圈');
+            Navigator.push(context,
+              new MaterialPageRoute(builder: (context) => new FriendCirclePage()),
+            );
+            //Navigator.pushNamed(context, '/test');
             break;
           case '联系客服':
             break;

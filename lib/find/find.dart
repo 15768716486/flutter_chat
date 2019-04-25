@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import '../common/touch_callback.dart';
 import '../common/im_item.dart';
+import './friend_circle.dart';
 
 //我的页面
 class Find extends StatelessWidget {
@@ -16,12 +17,27 @@ class Find extends StatelessWidget {
         children: <Widget>[
           //列表项 使用ImItem渲染
           Container(
-            //margin: const EdgeInsets.only(top: 20.0),
-            color: Colors.white,
-            child: ImItem(
-              title: '朋友圈',
-              imagePath: 'images/icon_me_friends.png',
-            ),
+               color: Colors.white,
+              // child: RaisedButton(
+              //   color: Colors.white,
+              //   elevation: 0.0,
+              //   child: ImItem(
+              //     title: '朋友圈',
+              //     imagePath: 'images/icon_me_friends.png',
+              //   ),
+              //   onPressed: () {
+              //     print('object');
+              //     Navigator.push(
+              //       context,
+              //       new MaterialPageRoute(
+              //           builder: (context) => new FriendCirclePage()),
+              //     );
+              //   },
+              // )
+              child: ImItem(
+                      title: '朋友圈',
+                      imagePath: 'images/icon_me_friends.png',
+                    ),
           ),
           Container(
             margin: const EdgeInsets.only(top: 8.0),
@@ -144,7 +160,7 @@ class Find extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 8.0,bottom: 20.0),
+            margin: const EdgeInsets.only(top: 8.0, bottom: 20.0),
             color: Colors.white,
             child: Column(
               children: <Widget>[
